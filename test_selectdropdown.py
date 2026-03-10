@@ -7,14 +7,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options as ChromeOptions
-from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
-from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.edge.options import Options as EdgeOptions
-from selenium.webdriver.edge.service import Service as EdgeService
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.firefox import GeckoDriverManager
-from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Logging setup
@@ -28,7 +22,9 @@ log = logging.getLogger(__name__)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Browser factory — uses webdriver-manager to auto-match driver versions
+# Browser factory
+# Uses Selenium 4.6+ built-in Selenium Manager — no webdriver-manager needed,
+# no external network calls, works in GitHub Actions CI out of the box.
 # ─────────────────────────────────────────────────────────────────────────────
 def get_driver(browser_name: str):
     browser_name = browser_name.lower()
@@ -39,8 +35,7 @@ def get_driver(browser_name: str):
         opts.add_argument("--headless")
         opts.add_argument("--width=1920")
         opts.add_argument("--height=1080")
-        service = FirefoxService(GeckoDriverManager().install())
-        driver = webdriver.Firefox(service=service, options=opts)
+        driver = webdriver.Firefox(options=opts)  # Selenium Manager handles geckodriver
 
     elif browser_name == "edge":
         opts = EdgeOptions()
@@ -49,8 +44,7 @@ def get_driver(browser_name: str):
         opts.add_argument("--no-sandbox")
         opts.add_argument("--disable-dev-shm-usage")
         opts.add_argument("--disable-gpu")
-        service = EdgeService(EdgeChromiumDriverManager().install())
-        driver = webdriver.Edge(service=service, options=opts)
+        driver = webdriver.Edge(options=opts)  # Selenium Manager handles msedgedriver
 
     else:  # chrome (default)
         opts = ChromeOptions()
@@ -60,9 +54,8 @@ def get_driver(browser_name: str):
         opts.add_argument("--disable-dev-shm-usage")
         opts.add_argument("--disable-gpu")
         opts.add_argument("--disable-extensions")
-        opts.add_argument("--remote-debugging-port=9222")   # ← fixes CI crash
-        service = ChromeService(ChromeDriverManager().install())
-        driver = webdriver.Chrome(service=service, options=opts)
+        opts.add_argument("--remote-debugging-port=9222")
+        driver = webdriver.Chrome(options=opts)  # Selenium Manager handles chromedriver
 
     driver.maximize_window()
     return driver
@@ -108,7 +101,7 @@ def validate(condition: bool, pass_msg: str, fail_msg: str):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# TEST
+# TEST — runs once per browser (chrome, firefox, edge) via conftest.py
 # ─────────────────────────────────────────────────────────────────────────────
 def test_select_dropdown_option2(driver, browser):
     """
