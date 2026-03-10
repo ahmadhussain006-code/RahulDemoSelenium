@@ -35,18 +35,6 @@ jobs:
           python -m pip install --upgrade pip
           pip install selenium pytest pytest-html webdriver-manager
 
-      - name: Set up Chrome browser
-        if: matrix.browser == 'chrome'
-        uses: browser-actions/setup-chrome@v1
-
-      - name: Set up Firefox browser
-        if: matrix.browser == 'firefox'
-        uses: browser-actions/setup-firefox@v1
-
-      - name: Set up Edge browser
-        if: matrix.browser == 'edge'
-        uses: browser-actions/setup-edge@v1
-
       - name: Create output directories
         run: |
           mkdir -p screenshots
@@ -84,4 +72,4 @@ jobs:
         with:
           name: failure-screenshot-${{ matrix.browser }}
           path: screenshots/failure_${{ matrix.browser }}.png
-          if-no-files-found: ignore
+          if-no-files-found: ignoregit

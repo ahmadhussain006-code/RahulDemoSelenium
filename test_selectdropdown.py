@@ -7,8 +7,14 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.edge.options import Options as EdgeOptions
+from selenium.webdriver.edge.service import Service as EdgeService
+from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Logging setup
@@ -22,7 +28,7 @@ log = logging.getLogger(__name__)
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Browser factory
+# Browser factory — uses webdriver-manager to auto-match driver versions
 # ─────────────────────────────────────────────────────────────────────────────
 def get_driver(browser_name: str):
     browser_name = browser_name.lower()
@@ -33,7 +39,8 @@ def get_driver(browser_name: str):
         opts.add_argument("--headless")
         opts.add_argument("--width=1920")
         opts.add_argument("--height=1080")
-        driver = webdriver.Firefox(options=opts)
+        service = FirefoxService(GeckoDriverManager().install())
+        driver = webdriver.Firefox(service=service, options=opts)
 
     elif browser_name == "edge":
         opts = EdgeOptions()
@@ -41,29 +48,34 @@ def get_driver(browser_name: str):
         opts.add_argument("--window-size=1920,1080")
         opts.add_argument("--no-sandbox")
         opts.add_argument("--disable-dev-shm-usage")
-        driver = webdriver.Edge(options=opts)
+        opts.add_argument("--disable-gpu")
+        service = EdgeService(EdgeChromiumDriverManager().install())
+        driver = webdriver.Edge(service=service, options=opts)
 
     else:  # chrome (default)
         opts = ChromeOptions()
+        opts.add_argument("--headless=new")
         opts.add_argument("--window-size=1920,1080")
         opts.add_argument("--no-sandbox")
         opts.add_argument("--disable-dev-shm-usage")
         opts.add_argument("--disable-gpu")
-        driver = webdriver.Chrome(options=opts)
+        opts.add_argument("--disable-extensions")
+        opts.add_argument("--remote-debugging-port=9222")   # ← fixes CI crash
+        service = ChromeService(ChromeDriverManager().install())
+        driver = webdriver.Chrome(service=service, options=opts)
 
     driver.maximize_window()
     return driver
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Driver fixture — scoped per test, browser comes from conftest parametrize
+# Driver fixture
 # ─────────────────────────────────────────────────────────────────────────────
 @pytest.fixture()
 def driver(request, browser):
     drv = get_driver(browser)
     yield drv
 
-    # Screenshot on failure
     if hasattr(request.node, "rep_call") and request.node.rep_call.failed:
         os.makedirs("screenshots", exist_ok=True)
         path = f"screenshots/failure_{browser}_{request.node.name}.png"
@@ -96,7 +108,7 @@ def validate(condition: bool, pass_msg: str, fail_msg: str):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# TEST — runs once per browser (chrome, firefox, edge)
+# TEST
 # ─────────────────────────────────────────────────────────────────────────────
 def test_select_dropdown_option2(driver, browser):
     """
@@ -166,7 +178,7 @@ def test_select_dropdown_option2(driver, browser):
         # ─────────────────────────────────────────────────
         # STEP 4: Inspect options
         # ─────────────────────────────────────────────────
-        select     = Select(dropdown_element)
+        select      = Select(dropdown_element)
         all_options = [opt.text for opt in select.options]
         log.info(f"[{browser.upper()}]          All options: {all_options}")
         print(f"\n  📋 [{browser.upper()}] Dropdown options found: {all_options}")
