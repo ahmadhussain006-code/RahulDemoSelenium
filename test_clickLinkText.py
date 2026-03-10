@@ -1,10 +1,3 @@
-# Think and act like you are a senior software tester. Write a script to automate. Additionally, I require an HTML report, cross-browser testing, screenshots, and a test report for all browsers on GitHub, including all logs of this website, using the PyCharm framework with Selenium and Python. Also, generate a .yml file script to push files to GitHub accordingly.
-# 1. Open this website- https://rahulshettyacademy.com/AutomationPractice/
-# 2. Maximise the window
-# 3. Select dropdown > option2
-
-
-
 import os
 import time
 import logging
@@ -17,7 +10,7 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Logging setup
+# Logging setup — captured in console + HTML report
 # ─────────────────────────────────────────────────────────────────────────────
 logging.basicConfig(
     level=logging.INFO,
@@ -29,8 +22,8 @@ log = logging.getLogger(__name__)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Browser factory
-# NOTE: maximize_window() is intentionally REMOVED — it causes a ReadTimeout
-# on Edge/Firefox headless in Linux CI. Window size is set via launch args.
+# Window size set via launch args (1920x1080) — maximize_window() skipped
+# because it causes ReadTimeoutError in headless Linux CI environments
 # ─────────────────────────────────────────────────────────────────────────────
 def get_driver(browser_name: str):
     browser_name = browser_name.lower()
@@ -43,7 +36,7 @@ def get_driver(browser_name: str):
         opts.add_argument("--height=1080")
         driver = webdriver.Firefox(options=opts)
 
-    else:  # chrome (default)
+    else:  # chrome default
         opts = ChromeOptions()
         opts.add_argument("--headless=new")
         opts.add_argument("--window-size=1920,1080")
@@ -54,13 +47,11 @@ def get_driver(browser_name: str):
         opts.add_argument("--remote-debugging-port=9222")
         driver = webdriver.Chrome(options=opts)
 
-    # DO NOT call driver.maximize_window() here —
-    # it sends a WebDriver command that times out in headless CI on Linux
     return driver
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Driver fixture
+# Pytest fixture — driver setup + teardown + failure screenshot
 # ─────────────────────────────────────────────────────────────────────────────
 @pytest.fixture()
 def driver(request, browser):
@@ -71,13 +62,13 @@ def driver(request, browser):
         os.makedirs("screenshots", exist_ok=True)
         path = f"screenshots/failure_{browser}_{request.node.name}.png"
         drv.save_screenshot(path)
-        log.error(f"FAILED screenshot saved: {path}")
+        log.error(f"FAILED — screenshot saved: {path}")
 
     drv.quit()
     log.info(f"Browser closed: {browser}")
 
 
-# Hook to expose rep_call to fixture
+# Hook — exposes rep_call to fixture for failure detection
 @pytest.hookimpl(tryfirst=True, hookwrapper=True)
 def pytest_runtest_makereport(item, call):
     outcome = yield
@@ -86,7 +77,7 @@ def pytest_runtest_makereport(item, call):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# Validation helper
+# Validation helper — senior QA assertion wrapper
 # ─────────────────────────────────────────────────────────────────────────────
 def validate(condition: bool, pass_msg: str, fail_msg: str):
     if condition:
@@ -99,22 +90,27 @@ def validate(condition: bool, pass_msg: str, fail_msg: str):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# TEST — runs on chrome + firefox via conftest.py parametrize
+# TEST
 # ─────────────────────────────────────────────────────────────────────────────
-def test_select_dropdown_option2(driver, browser):
+def test_link_and_dropdown(driver, browser):
     """
     Senior QA Test — Automation Practice Site
-    Browsers: Chrome, Firefox (Edge excluded — not available on ubuntu-latest CI)
+    Browsers : Chrome, Firefox (parametrized via conftest.py)
     Steps:
       1. Open website
-      2. Maximise window (set via launch args, 1920x1080)
-      3. Select dropdown > Option2
+      2. Maximise window (1920x1080 via launch args)
+      3. Click 'Get Shortlisted...' link → new tab opens
+      4. Verify new tab opened → switch BACK to main tab
+      5. Select dropdown > Option2
     Validations:
       V1 — Page title is correct
-      V2 — Dropdown is present and enabled
-      V3 — Option2 exists in the dropdown options list
-      V4 — After selection, selected value equals 'Option2'
-      V5 — DOM value attribute confirms selection
+      V2 — 'Get Shortlisted' link is visible and clickable
+      V3 — New tab was opened after clicking the link
+      V4 — Successfully switched back to the original main tab
+      V5 — Dropdown is visible and enabled
+      V6 — Option2 exists in dropdown options list
+      V7 — Selected text matches 'Option2'
+      V8 — DOM value attribute is set correctly
     """
     wait = WebDriverWait(driver, 15)
     os.makedirs("screenshots", exist_ok=True)
@@ -141,46 +137,120 @@ def test_select_dropdown_option2(driver, browser):
         )
 
         # ─────────────────────────────────────────────────
-        # STEP 2: Window size confirmation (already set via args)
+        # STEP 2: Maximise window
         # ─────────────────────────────────────────────────
-        log.info(f"[{browser.upper()}] [STEP 2] Window set to 1920x1080 via launch arguments.")
+        log.info(f"[{browser.upper()}] [STEP 2] Window maximised at 1920x1080 via launch args.")
         driver.save_screenshot(f"screenshots/step2_maximised_{browser}.png")
 
         # ─────────────────────────────────────────────────
-        # STEP 3: Locate dropdown
+        # STEP 3: Click "Get Shortlisted..." link (top right)
         # ─────────────────────────────────────────────────
-        log.info(f"[{browser.upper()}] [STEP 3] Locating dropdown...")
+        log.info(f"[{browser.upper()}] [STEP 3] Locating 'Get Shortlisted...' link...")
+
+        # The link text may be truncated — use partial link text for resilience
+        get_shortlisted_link = wait.until(
+            EC.element_to_be_clickable(
+                (By.PARTIAL_LINK_TEXT, "Get Shortlisted")
+            )
+        )
+        link_text = get_shortlisted_link.text
+        link_href = get_shortlisted_link.get_attribute("href")
+        log.info(f"[{browser.upper()}]          Link text: '{link_text}'")
+        log.info(f"[{browser.upper()}]          Link href: '{link_href}'")
+        driver.save_screenshot(f"screenshots/step3_before_click_{browser}.png")
+
+        # V2 — Link is visible and clickable
+        validate(
+            get_shortlisted_link.is_displayed() and get_shortlisted_link.is_enabled(),
+            f"[{browser.upper()}] 'Get Shortlisted' link is visible and clickable",
+            f"[{browser.upper()}] 'Get Shortlisted' link is NOT visible or not enabled"
+        )
+
+        # Record existing tabs before click
+        tabs_before = driver.window_handles
+        main_tab    = driver.current_window_handle
+        log.info(f"[{browser.upper()}]          Tabs before click: {len(tabs_before)}")
+
+        # Click the link
+        get_shortlisted_link.click()
+        log.info(f"[{browser.upper()}]          Clicked 'Get Shortlisted...' link.")
+        time.sleep(2)  # allow new tab to open
+
+        # ─────────────────────────────────────────────────
+        # STEP 4: Verify new tab opened → switch back to main tab
+        # ─────────────────────────────────────────────────
+        log.info(f"[{browser.upper()}] [STEP 4] Checking for new tab and switching back...")
+
+        tabs_after = driver.window_handles
+        log.info(f"[{browser.upper()}]          Tabs after click: {len(tabs_after)}")
+
+        # V3 — New tab was opened
+        validate(
+            len(tabs_after) > len(tabs_before),
+            f"[{browser.upper()}] New tab opened successfully — total tabs: {len(tabs_after)}",
+            f"[{browser.upper()}] No new tab was opened — still {len(tabs_after)} tab(s)"
+        )
+
+        # Identify and log the new tab
+        new_tab = [t for t in tabs_after if t != main_tab][0]
+        log.info(f"[{browser.upper()}]          New tab handle: {new_tab}")
+
+        # Switch to new tab briefly to log its title
+        driver.switch_to.window(new_tab)
+        time.sleep(1)
+        new_tab_title = driver.title
+        new_tab_url   = driver.current_url
+        log.info(f"[{browser.upper()}]          New tab title  : '{new_tab_title}'")
+        log.info(f"[{browser.upper()}]          New tab URL    : '{new_tab_url}'")
+        driver.save_screenshot(f"screenshots/step4_new_tab_{browser}.png")
+
+        # Switch BACK to the main tab
+        driver.switch_to.window(main_tab)
+        time.sleep(0.5)
+        current_title = driver.title
+        log.info(f"[{browser.upper()}]          Switched back — current title: '{current_title}'")
+        driver.save_screenshot(f"screenshots/step4_back_to_main_{browser}.png")
+
+        # V4 — Successfully back on main tab
+        validate(
+            EXPECTED_TITLE_PART in current_title,
+            f"[{browser.upper()}] Switched back to main tab — title: '{current_title}'",
+            f"[{browser.upper()}] Failed to switch back — title: '{current_title}'"
+        )
+
+        print(f"\n  📌 [{browser.upper()}] New tab opened: '{new_tab_title}' | URL: {new_tab_url}")
+        print(f"  📌 [{browser.upper()}] Switched back to main tab: '{current_title}'")
+
+        # ─────────────────────────────────────────────────
+        # STEP 5: Select Dropdown > Option2
+        # ─────────────────────────────────────────────────
+        log.info(f"[{browser.upper()}] [STEP 5] Locating dropdown...")
         dropdown_element = wait.until(
             EC.presence_of_element_located((By.ID, "dropdown-class-example"))
         )
         driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", dropdown_element)
         time.sleep(0.5)
 
-        # V2 — Dropdown visible and enabled
+        # V5 — Dropdown visible and enabled
         validate(
             dropdown_element.is_displayed() and dropdown_element.is_enabled(),
             f"[{browser.upper()}] Dropdown is visible and enabled",
             f"[{browser.upper()}] Dropdown is not visible or not enabled"
         )
 
-        # ─────────────────────────────────────────────────
-        # STEP 4: Inspect options
-        # ─────────────────────────────────────────────────
         select      = Select(dropdown_element)
         all_options = [opt.text for opt in select.options]
         log.info(f"[{browser.upper()}]          All options: {all_options}")
         print(f"\n  📋 [{browser.upper()}] Dropdown options found: {all_options}")
 
-        # V3 — Option2 exists in list
+        # V6 — Option2 exists
         validate(
             EXPECTED_OPTION in all_options,
             f"[{browser.upper()}] '{EXPECTED_OPTION}' is present in options {all_options}",
             f"[{browser.upper()}] '{EXPECTED_OPTION}' NOT found in options: {all_options}"
         )
 
-        # ─────────────────────────────────────────────────
-        # STEP 5: Select Option2
-        # ─────────────────────────────────────────────────
+        # Select Option2
         log.info(f"[{browser.upper()}] [STEP 5] Selecting '{EXPECTED_OPTION}'...")
         select.select_by_visible_text(EXPECTED_OPTION)
         time.sleep(0.5)
@@ -189,16 +259,16 @@ def test_select_dropdown_option2(driver, browser):
         selected_value = select.first_selected_option.get_attribute("value")
         log.info(f"[{browser.upper()}]          Selected text : '{selected_text}'")
         log.info(f"[{browser.upper()}]          Selected value: '{selected_value}'")
-        driver.save_screenshot(f"screenshots/step3_dropdown_selected_{browser}.png")
+        driver.save_screenshot(f"screenshots/step5_dropdown_selected_{browser}.png")
 
-        # V4 — Visible text matches
+        # V7 — Text matches
         validate(
             selected_text == EXPECTED_OPTION,
             f"[{browser.upper()}] Selected text '{selected_text}' matches '{EXPECTED_OPTION}'",
             f"[{browser.upper()}] Selected text '{selected_text}' does NOT match '{EXPECTED_OPTION}'"
         )
 
-        # V5 — DOM value attribute set
+        # V8 — DOM value set
         validate(
             selected_value is not None and len(selected_value) > 0,
             f"[{browser.upper()}] DOM value attribute is set: value='{selected_value}'",
@@ -208,18 +278,21 @@ def test_select_dropdown_option2(driver, browser):
         # ─────────────────────────────────────────────────
         # FINAL PRINT
         # ─────────────────────────────────────────────────
-        print(f"\n  {'='*52}")
-        print(f"  ✅ Dropdown Option2 Selected")
-        print(f"     Browser        : {browser.upper()}")
-        print(f"     Selected Text  : {selected_text}")
-        print(f"     Selected Value : {selected_value}")
-        print(f"     All Options    : {all_options}")
-        print(f"  {'='*52}\n")
+        print(f"\n  {'='*55}")
+        print(f"  ✅ ALL STEPS PASSED")
+        print(f"     Browser          : {browser.upper()}")
+        print(f"     Link Clicked     : {link_text}")
+        print(f"     New Tab Title    : {new_tab_title}")
+        print(f"     Switched Back To : {current_title}")
+        print(f"     Dropdown Selected: {selected_text} (value='{selected_value}')")
+        print(f"     All Options      : {all_options}")
+        print(f"  {'='*55}\n")
 
-        log.info("=" * 55)
-        log.info(f"  ✅ [{browser.upper()}] DROPDOWN OPTION2 SELECTED SUCCESSFULLY")
-        log.info(f"  Text: {selected_text} | Value: {selected_value}")
-        log.info("=" * 55)
+        log.info("=" * 60)
+        log.info(f"  ✅ [{browser.upper()}] ALL STEPS COMPLETED SUCCESSFULLY")
+        log.info(f"  Link: {link_text} | New tab: {new_tab_title}")
+        log.info(f"  Dropdown: {selected_text} (value='{selected_value}')")
+        log.info("=" * 60)
 
         driver.save_screenshot(f"screenshots/final_passed_{browser}.png")
 
