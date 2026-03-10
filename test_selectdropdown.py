@@ -8,7 +8,6 @@ from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
-from selenium.webdriver.edge.options import Options as EdgeOptions
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Logging setup
@@ -23,8 +22,8 @@ log = logging.getLogger(__name__)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # Browser factory
-# Uses Selenium 4.6+ built-in Selenium Manager — no webdriver-manager needed,
-# no external network calls, works in GitHub Actions CI out of the box.
+# NOTE: maximize_window() is intentionally REMOVED — it causes a ReadTimeout
+# on Edge/Firefox headless in Linux CI. Window size is set via launch args.
 # ─────────────────────────────────────────────────────────────────────────────
 def get_driver(browser_name: str):
     browser_name = browser_name.lower()
@@ -35,16 +34,7 @@ def get_driver(browser_name: str):
         opts.add_argument("--headless")
         opts.add_argument("--width=1920")
         opts.add_argument("--height=1080")
-        driver = webdriver.Firefox(options=opts)  # Selenium Manager handles geckodriver
-
-    elif browser_name == "edge":
-        opts = EdgeOptions()
-        opts.add_argument("--headless=new")
-        opts.add_argument("--window-size=1920,1080")
-        opts.add_argument("--no-sandbox")
-        opts.add_argument("--disable-dev-shm-usage")
-        opts.add_argument("--disable-gpu")
-        driver = webdriver.Edge(options=opts)  # Selenium Manager handles msedgedriver
+        driver = webdriver.Firefox(options=opts)
 
     else:  # chrome (default)
         opts = ChromeOptions()
@@ -55,9 +45,10 @@ def get_driver(browser_name: str):
         opts.add_argument("--disable-gpu")
         opts.add_argument("--disable-extensions")
         opts.add_argument("--remote-debugging-port=9222")
-        driver = webdriver.Chrome(options=opts)  # Selenium Manager handles chromedriver
+        driver = webdriver.Chrome(options=opts)
 
-    driver.maximize_window()
+    # DO NOT call driver.maximize_window() here —
+    # it sends a WebDriver command that times out in headless CI on Linux
     return driver
 
 
@@ -101,15 +92,15 @@ def validate(condition: bool, pass_msg: str, fail_msg: str):
 
 
 # ─────────────────────────────────────────────────────────────────────────────
-# TEST — runs once per browser (chrome, firefox, edge) via conftest.py
+# TEST — runs on chrome + firefox via conftest.py parametrize
 # ─────────────────────────────────────────────────────────────────────────────
 def test_select_dropdown_option2(driver, browser):
     """
     Senior QA Test — Automation Practice Site
-    Runs on: Chrome, Firefox, Edge (parametrized via conftest.py)
+    Browsers: Chrome, Firefox (Edge excluded — not available on ubuntu-latest CI)
     Steps:
       1. Open website
-      2. Maximise window
+      2. Maximise window (set via launch args, 1920x1080)
       3. Select dropdown > Option2
     Validations:
       V1 — Page title is correct
@@ -143,12 +134,9 @@ def test_select_dropdown_option2(driver, browser):
         )
 
         # ─────────────────────────────────────────────────
-        # STEP 2: Maximise the window
+        # STEP 2: Window size confirmation (already set via args)
         # ─────────────────────────────────────────────────
-        log.info(f"[{browser.upper()}] [STEP 2] Maximising window...")
-        driver.maximize_window()
-        driver.set_window_size(1920, 1080)
-        log.info(f"[{browser.upper()}]          Window size: {driver.get_window_size()}")
+        log.info(f"[{browser.upper()}] [STEP 2] Window set to 1920x1080 via launch arguments.")
         driver.save_screenshot(f"screenshots/step2_maximised_{browser}.png")
 
         # ─────────────────────────────────────────────────

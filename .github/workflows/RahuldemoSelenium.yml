@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        browser: [chrome, firefox, edge]
+        browser: [chrome, firefox]
 
     steps:
       - name: Checkout project
@@ -72,4 +72,4 @@ jobs:
         with:
           name: failure-screenshot-${{ matrix.browser }}
           path: screenshots/failure_${{ matrix.browser }}.png
-          if-no-files-found: ignoregit
+          if-no-files-found: ignore
