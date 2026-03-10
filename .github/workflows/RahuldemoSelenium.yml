@@ -1,0 +1,172 @@
+import os
+import time
+import logging
+import pytest
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import Select, WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.webdriver.edge.options import Options as EdgeOptions
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Logging setup — all logs appear in console AND are captured in HTML report
+# ─────────────────────────────────────────────────────────────────────────────
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%H:%M:%S"
+)
+log = logging.getLogger(__name__)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Browser factory — returns a configured WebDriver for the requested browser
+# ─────────────────────────────────────────────────────────────────────────────
+def get_driver(browser_name: str):
+    browser_name = browser_name.lower()
+    log.info(f"Launching browser: {browser_name}")
+
+    if browser_name == "firefox":
+        opts = FirefoxOptions()
+        opts.add_argument("--headless")
+        opts.add_argument("--width=1920")
+        opts.add_argument("--height=1080")
+        driver = webdriver.Firefox(options=opts)
+
+    elif browser_name == "edge":
+        opts = EdgeOptions()
+        opts.add_argument("--headless=new")
+        opts.add_argument("--window-size=1920,1080")
+        opts.add_argument("--no-sandbox")
+        opts.add_argument("--disable-dev-shm-usage")
+        driver = webdriver.Edge(options=opts)
+
+    else:  # default: chromium / chrome
+        opts = ChromeOptions()
+        opts.add_argument("--headless=new")
+        opts.add_argument("--window-size=1920,1080")
+        opts.add_argument("--no-sandbox")
+        opts.add_argument("--disable-dev-shm-usage")
+        opts.add_argument("--disable-gpu")
+        driver = webdriver.Chrome(options=opts)
+
+    driver.maximize_window()
+    return driver
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Pytest fixture — creates/tears down driver, saves screenshot on failure
+# ─────────────────────────────────────────────────────────────────────────────
+@pytest.fixture()
+def driver(request, browser):
+    drv = get_driver(browser)
+    yield drv
+
+    # Save screenshot on test failure
+    if request.node.rep_call.failed if hasattr(request.node, "rep_call") else False:
+        screenshot_path = f"screenshots/failure_{browser}_{request.node.name}.png"
+        os.makedirs("screenshots", exist_ok=True)
+        drv.save_screenshot(screenshot_path)
+        log.error(f"Test FAILED — screenshot saved: {screenshot_path}")
+
+    drv.quit()
+    log.info("Browser closed.")
+
+
+@pytest.fixture()
+def browser(request):
+    """Read browser from CLI --browser option, default to chrome."""
+    return request.config.getoption("--browser", default="chrome")
+
+
+def pytest_addoption(parser):
+    parser.addoption(
+        "--browser",
+        action="store",
+        default="chrome",
+        help="Browser to run tests on: chrome | firefox | edge"
+    )
+
+
+# Hook to make rep_call available in fixture
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    setattr(item, f"rep_{rep.when}", rep)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TEST
+# ─────────────────────────────────────────────────────────────────────────────
+def test_select_dropdown_option2(driver, browser):
+    """
+    Senior QA Test — Automation Practice Site
+    Steps:
+      1. Open website
+      2. Maximise window
+      3. Select dropdown > Option2
+    """
+    wait = WebDriverWait(driver, 15)
+    os.makedirs("screenshots", exist_ok=True)
+
+    try:
+        # ─────────────────────────────────────────────────
+        # STEP 1: Open the website
+        # ─────────────────────────────────────────────────
+        log.info("[STEP 1] Opening website...")
+        driver.get("https://rahulshettyacademy.com/AutomationPractice/")
+        wait.until(EC.presence_of_element_located((By.TAG_NAME, "body")))
+        log.info(f"         ✔ Website loaded. Title: '{driver.title}'")
+        driver.save_screenshot(f"screenshots/step1_opened_{browser}.png")
+
+        # ─────────────────────────────────────────────────
+        # STEP 2: Maximise the window
+        # ─────────────────────────────────────────────────
+        log.info("[STEP 2] Maximising window...")
+        driver.maximize_window()
+        driver.set_window_size(1920, 1080)
+        log.info(f"         ✔ Window size: {driver.get_window_size()}")
+        driver.save_screenshot(f"screenshots/step2_maximised_{browser}.png")
+
+        # ─────────────────────────────────────────────────
+        # STEP 3: Select dropdown → Option2
+        # ─────────────────────────────────────────────────
+        log.info("[STEP 3] Locating dropdown and selecting 'option2'...")
+
+        # Scroll to the dropdown first
+        dropdown_element = wait.until(
+            EC.presence_of_element_located((By.ID, "dropdown-class-example"))
+        )
+        driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", dropdown_element)
+        time.sleep(0.5)
+
+        # Use Selenium's Select class for native <select> dropdowns
+        select = Select(dropdown_element)
+
+        # Log all available options for the HTML report
+        options = [opt.text for opt in select.options]
+        log.info(f"         Available options: {options}")
+
+        # Select "Option2" by visible text
+        select.select_by_visible_text("Option2")
+        time.sleep(0.5)
+
+        selected = select.first_selected_option.text
+        log.info(f"         ✔ Selected: '{selected}'")
+        driver.save_screenshot(f"screenshots/step3_dropdown_selected_{browser}.png")
+
+        # ─────────────────────────────────────────────────
+        # ASSERTION
+        # ─────────────────────────────────────────────────
+        assert selected == "Option2", \
+            f"Expected 'Option2' but got '{selected}'"
+        log.info("         ✔ Assertion PASSED — Test Complete.")
+        driver.save_screenshot(f"screenshots/final_passed_{browser}.png")
+
+    except Exception as e:
+        log.error(f"[FAIL] Test failed on browser '{browser}': {e}")
+        driver.save_screenshot(f"screenshots/failure_{browser}.png")
+        raise
