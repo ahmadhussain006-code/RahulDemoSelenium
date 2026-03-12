@@ -1,0 +1,78 @@
+2026-03-12 15:20:28  [    INFO]  =================================================================
+2026-03-12 15:20:28  [    INFO]    BROWSER : CHROME
+2026-03-12 15:20:28  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 15:20:28  [    INFO]  =================================================================
+2026-03-12 15:20:30  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 15:20:30  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 15:20:36  [    INFO]    ✓ Title : Practice Page
+2026-03-12 15:20:36  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 15:20:36  [    INFO]    📸  [STEP] → screenshots/01_homepage_loaded_CHROME_STEP_20260312_152036.png
+2026-03-12 15:20:36  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 15:20:37  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 15:20:37  [    INFO]    📸  [STEP] → screenshots/02_iframe_section_CHROME_STEP_20260312_152037.png
+2026-03-12 15:20:37  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 15:20:37  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 15:20:41  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 15:20:42  [    INFO]    📸  [STEP] → screenshots/03_iframe_sidebar_scrolled_CHROME_STEP_20260312_152042.png
+2026-03-12 15:20:42  [    INFO]  ── STEP 5 : Open courses listing ──
+2026-03-12 15:20:51  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 15:20:51  [    INFO]    ↺ Re-entering iframe after internal navigation …
+2026-03-12 15:20:58  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 15:20:58  [    INFO]    ✓ Re-entered iframe — context is fresh
+2026-03-12 15:21:00  [    INFO]    📸  [STEP] → screenshots/04_after_view_courses_click_CHROME_STEP_20260312_152059.png
+2026-03-12 15:21:00  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names field ──
+2026-03-12 15:21:01  [    INFO]    ✓ Typed 'Test' in search field
+2026-03-12 15:21:01  [    INFO]    📸  [STEP] → screenshots/05_search_text_entered_CHROME_STEP_20260312_152101.png
+2026-03-12 15:21:01  [    INFO]  ── STEP 7 : Select 'Raymond' from All Authors dropdown ──
+2026-03-12 15:21:04  [    INFO]    ✓ Selected 'Raymond'
+2026-03-12 15:21:04  [    INFO]    📸  [STEP] → screenshots/06_author_selected_CHROME_STEP_20260312_152104.png
+2026-03-12 15:21:04  [    INFO]  ── STEP 8 : Select 'Name(A-Z)' from Recommended dropdown ──
+2026-03-12 15:21:06  [    INFO]    ✓ Selected 'Name(A-Z)'
+2026-03-12 15:21:06  [    INFO]    📸  [STEP] → screenshots/07_sort_selected_CHROME_STEP_20260312_152106.png
+2026-03-12 15:21:06  [    INFO]  ── STEP 9 : Verify no-match message ──
+2026-03-12 15:21:08  [    INFO]    ✓ Final text shown : No products match your current filters
+2026-03-12 15:21:08  [    INFO]    📸  [STEP] → screenshots/08_no_match_message_CHROME_STEP_20260312_152108.png
+2026-03-12 15:21:08  [    INFO]  ── STEP 10 : Select option2 from main-page dropdown ──
+2026-03-12 15:21:09  [    INFO]    ✓ Main dropdown selected : Option2
+2026-03-12 15:21:09  [    INFO]    📸  [STEP] → screenshots/09_main_dropdown_option2_CHROME_STEP_20260312_152109.png
+2026-03-12 15:21:09  [    INFO]  ── TEST COMPLETED SUCCESSFULLY ──
+2026-03-12 15:21:09  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 15:21:13  [    INFO]  =================================================================
+2026-03-12 15:21:13  [    INFO]    BROWSER : FIREFOX
+2026-03-12 15:21:13  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 15:21:13  [    INFO]  =================================================================
+2026-03-12 15:21:22  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 15:21:22  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 15:22:58  [    INFO]    ✓ Title : Practice Page
+2026-03-12 15:22:58  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 15:22:58  [    INFO]    📸  [STEP] → screenshots/01_homepage_loaded_FIREFOX_STEP_20260312_152258.png
+2026-03-12 15:22:58  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 15:22:59  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 15:22:59  [    INFO]    📸  [STEP] → screenshots/02_iframe_section_FIREFOX_STEP_20260312_152259.png
+2026-03-12 15:22:59  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 15:22:59  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 15:23:02  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 15:23:03  [    INFO]    📸  [STEP] → screenshots/03_iframe_sidebar_scrolled_FIREFOX_STEP_20260312_152303.png
+2026-03-12 15:23:03  [    INFO]  ── STEP 5 : Open courses listing ──
+2026-03-12 15:23:16  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 15:23:16  [    INFO]    ↺ Re-entering iframe after internal navigation …
+2026-03-12 15:23:18  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 15:23:18  [    INFO]    ✓ Re-entered iframe — context is fresh
+2026-03-12 15:23:20  [    INFO]    📸  [STEP] → screenshots/04_after_view_courses_click_FIREFOX_STEP_20260312_152320.png
+2026-03-12 15:23:20  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names field ──
+2026-03-12 15:23:21  [    INFO]    ✓ Typed 'Test' in search field
+2026-03-12 15:23:21  [    INFO]    📸  [STEP] → screenshots/05_search_text_entered_FIREFOX_STEP_20260312_152321.png
+2026-03-12 15:23:21  [    INFO]  ── STEP 7 : Select 'Raymond' from All Authors dropdown ──
+2026-03-12 15:23:23  [    INFO]    ✓ Selected 'Raymond'
+2026-03-12 15:23:23  [    INFO]    📸  [STEP] → screenshots/06_author_selected_FIREFOX_STEP_20260312_152323.png
+2026-03-12 15:23:23  [    INFO]  ── STEP 8 : Select 'Name(A-Z)' from Recommended dropdown ──
+2026-03-12 15:23:25  [    INFO]    ✓ Selected 'Name(A-Z)'
+2026-03-12 15:23:26  [    INFO]    📸  [STEP] → screenshots/07_sort_selected_FIREFOX_STEP_20260312_152325.png
+2026-03-12 15:23:26  [    INFO]  ── STEP 9 : Verify no-match message ──
+2026-03-12 15:23:26  [    INFO]    ✓ Final text shown : No products match your current filters
+2026-03-12 15:23:26  [    INFO]    📸  [STEP] → screenshots/08_no_match_message_FIREFOX_STEP_20260312_152326.png
+2026-03-12 15:23:26  [    INFO]  ── STEP 10 : Select option2 from main-page dropdown ──
+2026-03-12 15:23:27  [    INFO]    ✓ Main dropdown selected : Option2
+2026-03-12 15:23:27  [    INFO]    📸  [STEP] → screenshots/09_main_dropdown_option2_FIREFOX_STEP_20260312_152327.png
+2026-03-12 15:23:27  [    INFO]  ── TEST COMPLETED SUCCESSFULLY ──
+2026-03-12 15:23:27  [    INFO]    Quitting FIREFOX WebDriver …

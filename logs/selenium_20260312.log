@@ -1,0 +1,552 @@
+2026-03-12 14:00:04  [    INFO]  =================================================================
+2026-03-12 14:00:04  [    INFO]    BROWSER : CHROME
+2026-03-12 14:00:04  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 14:00:04  [    INFO]  =================================================================
+2026-03-12 14:00:17  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 14:00:17  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:00:23  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:00:23  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:00:24  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_140023.png
+2026-03-12 14:00:24  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:00:24  [    INFO]    ✓ Scrolled to iFrame Example section
+2026-03-12 14:00:24  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_140024.png
+2026-03-12 14:00:24  [    INFO]  ── STEP 4 : Switch into iFrame and scroll sidebar ──
+2026-03-12 14:00:24  [    INFO]    Found 1 iframe(s) on page
+2026-03-12 14:00:24  [    INFO]    Switched into iframe[0]
+2026-03-12 14:00:34  [   DEBUG]    Sidebar element found via ('css selector', "[class*='left']")
+2026-03-12 14:00:35  [    INFO]    ✓ Sidebar scrolled (element)
+2026-03-12 14:00:36  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_140036.png
+2026-03-12 14:00:36  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:00:36  [    INFO]    Button found in iframe_ctx
+2026-03-12 14:00:37  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:00:39  [    INFO]    📸  [STEP] → screenshots\04_after_click_view_courses_CHROME_STEP_20260312_140039.png
+2026-03-12 14:00:40  [    INFO]    Current URL: https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:00:40  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names ──
+2026-03-12 14:01:12  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 14:01:15  [    INFO]  =================================================================
+2026-03-12 14:01:15  [    INFO]    BROWSER : FIREFOX
+2026-03-12 14:01:15  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 14:01:15  [    INFO]  =================================================================
+2026-03-12 14:01:39  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 14:01:39  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:03:16  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:03:16  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:03:16  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_FIREFOX_STEP_20260312_140316.png
+2026-03-12 14:03:16  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:03:17  [    INFO]    ✓ Scrolled to iFrame Example section
+2026-03-12 14:03:17  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_FIREFOX_STEP_20260312_140317.png
+2026-03-12 14:03:17  [    INFO]  ── STEP 4 : Switch into iFrame and scroll sidebar ──
+2026-03-12 14:03:17  [    INFO]    Found 1 iframe(s) on page
+2026-03-12 14:03:17  [    INFO]    Switched into iframe[0]
+2026-03-12 14:03:27  [   DEBUG]    Sidebar element found via ('css selector', "[class*='left']")
+2026-03-12 14:03:27  [    INFO]    ✓ Sidebar scrolled (element)
+2026-03-12 14:03:28  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_FIREFOX_STEP_20260312_140328.png
+2026-03-12 14:03:28  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:03:28  [    INFO]    Button found in iframe_ctx
+2026-03-12 14:03:29  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:03:31  [    INFO]    📸  [STEP] → screenshots\04_after_click_view_courses_FIREFOX_STEP_20260312_140331.png
+2026-03-12 14:03:33  [    INFO]    Current URL: https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:03:33  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names ──
+2026-03-12 14:04:04  [    INFO]    Quitting FIREFOX WebDriver …
+2026-03-12 14:04:19  [    INFO]  =================================================================
+2026-03-12 14:04:19  [    INFO]    BROWSER : CHROME
+2026-03-12 14:04:19  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 14:04:19  [    INFO]  =================================================================
+2026-03-12 14:04:24  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 14:04:24  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:04:29  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:04:29  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:04:30  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_140429.png
+2026-03-12 14:04:30  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:04:30  [    INFO]    ✓ Scrolled to iFrame Example section
+2026-03-12 14:04:30  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_140430.png
+2026-03-12 14:04:30  [    INFO]  ── STEP 4 : Switch into iFrame and scroll sidebar ──
+2026-03-12 14:04:30  [    INFO]    Found 1 iframe(s) on page
+2026-03-12 14:04:30  [    INFO]    Switched into iframe[0]
+2026-03-12 14:04:41  [   DEBUG]    Sidebar element found via ('css selector', "[class*='left']")
+2026-03-12 14:04:41  [    INFO]    ✓ Sidebar scrolled (element)
+2026-03-12 14:04:42  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_140442.png
+2026-03-12 14:04:42  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:04:42  [    INFO]    Button found in iframe_ctx
+2026-03-12 14:04:43  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:04:45  [    INFO]    📸  [STEP] → screenshots\04_after_click_view_courses_CHROME_STEP_20260312_140445.png
+2026-03-12 14:04:47  [    INFO]    Current URL: https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:04:47  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names ──
+2026-03-12 14:05:18  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 14:05:21  [    INFO]  =================================================================
+2026-03-12 14:05:21  [    INFO]    BROWSER : FIREFOX
+2026-03-12 14:05:21  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 14:05:21  [    INFO]  =================================================================
+2026-03-12 14:05:33  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 14:05:33  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:07:07  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:07:07  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:07:07  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_FIREFOX_STEP_20260312_140707.png
+2026-03-12 14:07:07  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:07:08  [    INFO]    ✓ Scrolled to iFrame Example section
+2026-03-12 14:07:08  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_FIREFOX_STEP_20260312_140708.png
+2026-03-12 14:07:08  [    INFO]  ── STEP 4 : Switch into iFrame and scroll sidebar ──
+2026-03-12 14:07:08  [    INFO]    Found 1 iframe(s) on page
+2026-03-12 14:07:08  [    INFO]    Switched into iframe[0]
+2026-03-12 14:07:18  [   DEBUG]    Sidebar element found via ('css selector', "[class*='left']")
+2026-03-12 14:07:18  [    INFO]    ✓ Sidebar scrolled (element)
+2026-03-12 14:07:19  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_FIREFOX_STEP_20260312_140719.png
+2026-03-12 14:07:19  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:07:19  [    INFO]    Button found in iframe_ctx
+2026-03-12 14:07:20  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:07:22  [    INFO]    📸  [STEP] → screenshots\04_after_click_view_courses_FIREFOX_STEP_20260312_140722.png
+2026-03-12 14:07:23  [    INFO]    Current URL: https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:07:23  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names ──
+2026-03-12 14:07:54  [    INFO]    Quitting FIREFOX WebDriver …
+2026-03-12 14:08:34  [    INFO]  =================================================================
+2026-03-12 14:08:34  [    INFO]    BROWSER : CHROME
+2026-03-12 14:08:34  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 14:08:34  [    INFO]  =================================================================
+2026-03-12 14:08:39  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 14:08:39  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:08:45  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:08:45  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:08:46  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_140845.png
+2026-03-12 14:08:46  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:08:46  [    INFO]    ✓ Scrolled to iFrame Example section
+2026-03-12 14:08:46  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_140846.png
+2026-03-12 14:08:46  [    INFO]  ── STEP 4 : Switch into iFrame and scroll sidebar ──
+2026-03-12 14:08:46  [    INFO]    Found 1 iframe(s) on page
+2026-03-12 14:08:46  [    INFO]    Switched into iframe[0]
+2026-03-12 14:08:56  [   DEBUG]    Sidebar element found via ('css selector', "[class*='left']")
+2026-03-12 14:08:56  [    INFO]    ✓ Sidebar scrolled (element)
+2026-03-12 14:08:58  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_140858.png
+2026-03-12 14:08:58  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:08:58  [    INFO]    Button found in iframe_ctx
+2026-03-12 14:08:59  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:09:01  [    INFO]    📸  [STEP] → screenshots\04_after_click_view_courses_CHROME_STEP_20260312_140901.png
+2026-03-12 14:09:02  [    INFO]    Current URL: https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:09:02  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names ──
+2026-03-12 14:09:34  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 14:09:36  [    INFO]  =================================================================
+2026-03-12 14:09:36  [    INFO]    BROWSER : FIREFOX
+2026-03-12 14:09:36  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 14:09:36  [    INFO]  =================================================================
+2026-03-12 14:09:48  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 14:09:48  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:11:24  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:11:24  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:11:24  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_FIREFOX_STEP_20260312_141124.png
+2026-03-12 14:11:24  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:11:24  [    INFO]    ✓ Scrolled to iFrame Example section
+2026-03-12 14:11:24  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_FIREFOX_STEP_20260312_141124.png
+2026-03-12 14:11:24  [    INFO]  ── STEP 4 : Switch into iFrame and scroll sidebar ──
+2026-03-12 14:11:24  [    INFO]    Found 1 iframe(s) on page
+2026-03-12 14:11:24  [    INFO]    Switched into iframe[0]
+2026-03-12 14:11:34  [   DEBUG]    Sidebar element found via ('css selector', "[class*='left']")
+2026-03-12 14:11:34  [    INFO]    ✓ Sidebar scrolled (element)
+2026-03-12 14:11:36  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_FIREFOX_STEP_20260312_141136.png
+2026-03-12 14:11:36  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:11:36  [    INFO]    Button found in iframe_ctx
+2026-03-12 14:11:36  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:11:39  [    INFO]    📸  [STEP] → screenshots\04_after_click_view_courses_FIREFOX_STEP_20260312_141139.png
+2026-03-12 14:11:40  [    INFO]    Current URL: https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:11:40  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names ──
+2026-03-12 14:12:11  [    INFO]    Quitting FIREFOX WebDriver …
+2026-03-12 14:12:51  [    INFO]  =================================================================
+2026-03-12 14:12:51  [    INFO]    BROWSER : CHROME
+2026-03-12 14:12:51  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 14:12:51  [    INFO]  =================================================================
+2026-03-12 14:12:56  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 14:12:56  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:13:52  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:13:52  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:13:52  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_141352.png
+2026-03-12 14:13:52  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:13:52  [    INFO]    ✓ Scrolled to iFrame Example section
+2026-03-12 14:13:52  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_141352.png
+2026-03-12 14:13:52  [    INFO]  ── STEP 4 : Switch into iFrame and scroll sidebar ──
+2026-03-12 14:13:53  [    INFO]    Found 1 iframe(s) on page
+2026-03-12 14:13:53  [    INFO]    Switched into iframe[0]
+2026-03-12 14:14:03  [   DEBUG]    Sidebar element found via ('css selector', "[class*='left']")
+2026-03-12 14:14:03  [    INFO]    ✓ Sidebar scrolled (element)
+2026-03-12 14:14:04  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_141404.png
+2026-03-12 14:14:04  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:14:04  [    INFO]    Button found in iframe_ctx
+2026-03-12 14:14:05  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:14:07  [    INFO]    📸  [STEP] → screenshots\04_after_click_view_courses_CHROME_STEP_20260312_141407.png
+2026-03-12 14:14:08  [    INFO]    Current URL: https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:14:08  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names ──
+2026-03-12 14:14:40  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 14:14:43  [    INFO]  =================================================================
+2026-03-12 14:14:43  [    INFO]    BROWSER : FIREFOX
+2026-03-12 14:14:43  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 14:14:43  [    INFO]  =================================================================
+2026-03-12 14:16:26  [    INFO]  =================================================================
+2026-03-12 14:16:26  [    INFO]    BROWSER : CHROME
+2026-03-12 14:16:26  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 14:16:26  [    INFO]  =================================================================
+2026-03-12 14:16:34  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 14:16:34  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:16:41  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:16:41  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:16:41  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_141641.png
+2026-03-12 14:16:41  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:16:41  [    INFO]    ✓ Scrolled to iFrame Example section
+2026-03-12 14:16:42  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_141641.png
+2026-03-12 14:16:42  [    INFO]  ── STEP 4 : Switch into iFrame and scroll sidebar ──
+2026-03-12 14:16:42  [    INFO]    Found 1 iframe(s) on page
+2026-03-12 14:16:42  [    INFO]    Switched into iframe[0]
+2026-03-12 14:16:52  [   DEBUG]    Sidebar element found via ('css selector', "[class*='left']")
+2026-03-12 14:16:52  [    INFO]    ✓ Sidebar scrolled (element)
+2026-03-12 14:16:53  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_141653.png
+2026-03-12 14:16:53  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:16:53  [    INFO]    Button found in iframe_ctx
+2026-03-12 14:16:54  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:16:56  [    INFO]    📸  [STEP] → screenshots\04_after_click_view_courses_CHROME_STEP_20260312_141656.png
+2026-03-12 14:16:58  [    INFO]    Current URL: https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:16:58  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names ──
+2026-03-12 14:17:29  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 14:17:32  [    INFO]  =================================================================
+2026-03-12 14:17:32  [    INFO]    BROWSER : FIREFOX
+2026-03-12 14:17:32  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 14:17:32  [    INFO]  =================================================================
+2026-03-12 14:17:53  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 14:17:53  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:18:30  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:18:30  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:18:31  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_FIREFOX_STEP_20260312_141830.png
+2026-03-12 14:18:31  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:18:31  [    INFO]    ✓ Scrolled to iFrame Example section
+2026-03-12 14:18:31  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_FIREFOX_STEP_20260312_141831.png
+2026-03-12 14:18:31  [    INFO]  ── STEP 4 : Switch into iFrame and scroll sidebar ──
+2026-03-12 14:18:31  [    INFO]    Found 1 iframe(s) on page
+2026-03-12 14:18:31  [    INFO]    Switched into iframe[0]
+2026-03-12 14:18:51  [   DEBUG]    Sidebar element found via ('css selector', 'ul')
+2026-03-12 14:18:51  [    INFO]    ✓ Sidebar scrolled (element)
+2026-03-12 14:18:52  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_FIREFOX_STEP_20260312_141852.png
+2026-03-12 14:18:52  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:19:13  [    INFO]    Quitting FIREFOX WebDriver …
+2026-03-12 14:20:12  [    INFO]  =================================================================
+2026-03-12 14:20:12  [    INFO]    BROWSER : CHROME
+2026-03-12 14:20:12  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 14:20:12  [    INFO]  =================================================================
+2026-03-12 14:20:24  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 14:20:24  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:20:37  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:20:37  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:20:37  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_142037.png
+2026-03-12 14:20:37  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:20:37  [    INFO]    ✓ Scrolled to iFrame Example section
+2026-03-12 14:20:38  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_142037.png
+2026-03-12 14:20:38  [    INFO]  ── STEP 4 : Switch into iFrame and scroll sidebar ──
+2026-03-12 14:20:38  [    INFO]    Found 1 iframe(s) on page
+2026-03-12 14:20:38  [    INFO]    Switched into iframe[0]
+2026-03-12 14:20:48  [   DEBUG]    Sidebar element found via ('css selector', "[class*='left']")
+2026-03-12 14:20:48  [    INFO]    ✓ Sidebar scrolled (element)
+2026-03-12 14:20:49  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_142049.png
+2026-03-12 14:20:49  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:20:49  [    INFO]    Button found in iframe_ctx
+2026-03-12 14:20:50  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:20:53  [    INFO]    📸  [STEP] → screenshots\04_after_click_view_courses_CHROME_STEP_20260312_142052.png
+2026-03-12 14:20:55  [    INFO]    Current URL: https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:20:55  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names ──
+2026-03-12 14:21:26  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 14:21:29  [    INFO]  =================================================================
+2026-03-12 14:21:29  [    INFO]    BROWSER : FIREFOX
+2026-03-12 14:21:29  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 14:21:29  [    INFO]  =================================================================
+2026-03-12 14:21:46  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 14:21:46  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:23:21  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:23:21  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:23:21  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_FIREFOX_STEP_20260312_142321.png
+2026-03-12 14:23:21  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:23:21  [    INFO]    ✓ Scrolled to iFrame Example section
+2026-03-12 14:23:22  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_FIREFOX_STEP_20260312_142321.png
+2026-03-12 14:23:22  [    INFO]  ── STEP 4 : Switch into iFrame and scroll sidebar ──
+2026-03-12 14:23:22  [    INFO]    Found 1 iframe(s) on page
+2026-03-12 14:23:22  [    INFO]    Switched into iframe[0]
+2026-03-12 14:23:32  [   DEBUG]    Sidebar element found via ('css selector', "[class*='left']")
+2026-03-12 14:23:32  [    INFO]    ✓ Sidebar scrolled (element)
+2026-03-12 14:23:33  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_FIREFOX_STEP_20260312_142333.png
+2026-03-12 14:23:33  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:23:33  [    INFO]    Button found in iframe_ctx
+2026-03-12 14:23:33  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:23:36  [    INFO]    📸  [STEP] → screenshots\04_after_click_view_courses_FIREFOX_STEP_20260312_142336.png
+2026-03-12 14:23:37  [    INFO]    Current URL: https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:23:37  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names ──
+2026-03-12 14:24:08  [    INFO]    Quitting FIREFOX WebDriver …
+2026-03-12 14:29:01  [    INFO]  =================================================================
+2026-03-12 14:29:01  [    INFO]    BROWSER : CHROME
+2026-03-12 14:29:01  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 14:29:01  [    INFO]  =================================================================
+2026-03-12 14:29:06  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 14:29:06  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:29:14  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:29:14  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:29:14  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_142914.png
+2026-03-12 14:29:14  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:29:15  [    INFO]    ✓ Scrolled to iFrame Example
+2026-03-12 14:29:15  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_142915.png
+2026-03-12 14:29:15  [    INFO]  ── STEP 4 : Switch into iFrame and scroll sidebar ──
+2026-03-12 14:29:15  [    INFO]    Found 1 iframe(s) on page
+2026-03-12 14:29:15  [    INFO]    ✓ Switched into iframe[0]
+2026-03-12 14:29:15  [    INFO]    ✓ Sidebar scrolled
+2026-03-12 14:29:17  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_142917.png
+2026-03-12 14:29:17  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:29:17  [    INFO]    Button found inside iFrame
+2026-03-12 14:29:18  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:29:21  [    INFO]    📸  [STEP] → screenshots\04_after_click_view_courses_CHROME_STEP_20260312_142921.png
+2026-03-12 14:29:21  [ WARNING]    No navigation detected after click – going directly to shop URL
+2026-03-12 14:29:26  [    INFO]    Navigated to: https://rahulshettyacademy.com/
+2026-03-12 14:29:27  [    INFO]    📸  [STEP] → screenshots\05_courses_page_loaded_CHROME_STEP_20260312_142926.png
+2026-03-12 14:29:27  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names ──
+2026-03-12 14:29:59  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 14:30:01  [    INFO]  =================================================================
+2026-03-12 14:30:01  [    INFO]    BROWSER : FIREFOX
+2026-03-12 14:30:01  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 14:30:01  [    INFO]  =================================================================
+2026-03-12 14:30:14  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 14:30:14  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:32:15  [    INFO]    Quitting FIREFOX WebDriver …
+2026-03-12 14:43:57  [    INFO]  =================================================================
+2026-03-12 14:43:57  [    INFO]    BROWSER : CHROME
+2026-03-12 14:43:57  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 14:43:57  [    INFO]  =================================================================
+2026-03-12 14:44:04  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 14:44:04  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:44:18  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:44:18  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:44:18  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_144418.png
+2026-03-12 14:44:18  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:44:18  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 14:44:19  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_144418.png
+2026-03-12 14:44:19  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 14:44:19  [    INFO]    Found iframe by id='courses-iframe'
+2026-03-12 14:44:19  [    INFO]    ✓ Switched into iframe
+2026-03-12 14:44:20  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 14:44:22  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_144422.png
+2026-03-12 14:44:22  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:44:23  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:44:26  [    INFO]    📸  [STEP] → screenshots\04_after_view_courses_click_CHROME_STEP_20260312_144426.png
+2026-03-12 14:44:26  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names field ──
+2026-03-12 14:44:57  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 14:45:00  [    INFO]  =================================================================
+2026-03-12 14:45:00  [    INFO]    BROWSER : FIREFOX
+2026-03-12 14:45:00  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 14:45:00  [    INFO]  =================================================================
+2026-03-12 14:45:14  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 14:45:14  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:45:23  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:45:23  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:45:23  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_FIREFOX_STEP_20260312_144523.png
+2026-03-12 14:45:23  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:45:23  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 14:45:23  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_FIREFOX_STEP_20260312_144523.png
+2026-03-12 14:45:23  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 14:45:23  [    INFO]    Found iframe by id='courses-iframe'
+2026-03-12 14:45:24  [    INFO]    ✓ Switched into iframe
+2026-03-12 14:45:25  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 14:45:27  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_FIREFOX_STEP_20260312_144526.png
+2026-03-12 14:45:27  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:45:27  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:45:30  [    INFO]    📸  [STEP] → screenshots\04_after_view_courses_click_FIREFOX_STEP_20260312_144530.png
+2026-03-12 14:45:30  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names field ──
+2026-03-12 14:46:01  [    INFO]    Quitting FIREFOX WebDriver …
+2026-03-12 14:52:36  [    INFO]  =================================================================
+2026-03-12 14:52:36  [    INFO]    BROWSER : CHROME
+2026-03-12 14:52:36  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 14:52:36  [    INFO]  =================================================================
+2026-03-12 14:52:44  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 14:52:44  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:52:50  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:52:50  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:52:50  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_145250.png
+2026-03-12 14:52:50  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:52:51  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 14:52:51  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_145251.png
+2026-03-12 14:52:51  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 14:52:51  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 14:52:52  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 14:52:54  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_145254.png
+2026-03-12 14:52:54  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:52:55  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:52:55  [    INFO]    ↺ Re-entering iframe after internal navigation …
+2026-03-12 14:52:58  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 14:52:58  [    INFO]    ✓ Re-entered iframe — context is fresh
+2026-03-12 14:53:00  [    INFO]    📸  [STEP] → screenshots\04_after_view_courses_click_CHROME_STEP_20260312_145259.png
+2026-03-12 14:53:00  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names field ──
+2026-03-12 14:53:31  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 14:53:33  [    INFO]  =================================================================
+2026-03-12 14:53:33  [    INFO]    BROWSER : FIREFOX
+2026-03-12 14:53:33  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 14:53:33  [    INFO]  =================================================================
+2026-03-12 14:53:54  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 14:53:54  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:54:55  [    INFO]    Quitting FIREFOX WebDriver …
+2026-03-12 14:56:19  [    INFO]  =================================================================
+2026-03-12 14:56:19  [    INFO]    BROWSER : CHROME
+2026-03-12 14:56:19  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 14:56:19  [    INFO]  =================================================================
+2026-03-12 14:56:26  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 14:56:26  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:56:33  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:56:33  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:56:34  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_145633.png
+2026-03-12 14:56:34  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:56:34  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 14:56:35  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_145634.png
+2026-03-12 14:56:35  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 14:56:35  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 14:56:36  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 14:56:38  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_145637.png
+2026-03-12 14:56:38  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:56:38  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:56:38  [    INFO]    ↺ Re-entering iframe after internal navigation …
+2026-03-12 14:56:42  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 14:56:42  [    INFO]    ✓ Re-entered iframe — context is fresh
+2026-03-12 14:56:44  [    INFO]    📸  [STEP] → screenshots\04_after_view_courses_click_CHROME_STEP_20260312_145643.png
+2026-03-12 14:56:44  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names field ──
+2026-03-12 14:57:15  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 14:57:18  [    INFO]  =================================================================
+2026-03-12 14:57:18  [    INFO]    BROWSER : FIREFOX
+2026-03-12 14:57:18  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 14:57:18  [    INFO]  =================================================================
+2026-03-12 14:57:33  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 14:57:34  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 14:57:45  [    INFO]    ✓ Title : Practice Page
+2026-03-12 14:57:45  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 14:57:45  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_FIREFOX_STEP_20260312_145745.png
+2026-03-12 14:57:45  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 14:57:45  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 14:57:46  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_FIREFOX_STEP_20260312_145745.png
+2026-03-12 14:57:46  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 14:57:46  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 14:57:47  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 14:57:49  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_FIREFOX_STEP_20260312_145748.png
+2026-03-12 14:57:49  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 14:57:50  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 14:57:50  [    INFO]    ↺ Re-entering iframe after internal navigation …
+2026-03-12 14:57:53  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 14:57:53  [    INFO]    ✓ Re-entered iframe — context is fresh
+2026-03-12 14:57:55  [    INFO]    📸  [STEP] → screenshots\04_after_view_courses_click_FIREFOX_STEP_20260312_145754.png
+2026-03-12 14:57:55  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names field ──
+2026-03-12 14:58:25  [    INFO]    Quitting FIREFOX WebDriver …
+2026-03-12 15:01:40  [    INFO]  =================================================================
+2026-03-12 15:01:40  [    INFO]    BROWSER : CHROME
+2026-03-12 15:01:40  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 15:01:40  [    INFO]  =================================================================
+2026-03-12 15:01:47  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 15:01:47  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 15:01:54  [    INFO]    ✓ Title : Practice Page
+2026-03-12 15:01:55  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 15:01:55  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_150155.png
+2026-03-12 15:01:55  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 15:01:55  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 15:01:55  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_150155.png
+2026-03-12 15:01:55  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 15:01:56  [    INFO]    iframe src = https://legacy.rahulshettyacademy.com/
+2026-03-12 15:01:56  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 15:01:58  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 15:01:59  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_150159.png
+2026-03-12 15:01:59  [    INFO]  ── STEP 5 : Click 'View All Courses' and navigate to courses page ──
+2026-03-12 15:02:00  [    INFO]    'View All Courses' href = ''
+2026-03-12 15:02:00  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 15:02:03  [    INFO]    iframe src after click = 'https://legacy.rahulshettyacademy.com/'
+2026-03-12 15:02:03  [    INFO]    Navigating main window to: https://legacy.rahulshettyacademy.com/
+2026-03-12 15:02:07  [    INFO]    ✓ Landed on: https://legacy.rahulshettyacademy.com/
+2026-03-12 15:02:07  [    INFO]    📸  [STEP] → screenshots\04_courses_page_loaded_CHROME_STEP_20260312_150207.png
+2026-03-12 15:02:07  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names field ──
+2026-03-12 15:02:39  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 15:02:42  [    INFO]  =================================================================
+2026-03-12 15:02:42  [    INFO]    BROWSER : FIREFOX
+2026-03-12 15:02:42  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 15:02:42  [    INFO]  =================================================================
+2026-03-12 15:03:02  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 15:03:02  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 15:03:09  [    INFO]    ✓ Title : Practice Page
+2026-03-12 15:03:09  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 15:03:10  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_FIREFOX_STEP_20260312_150309.png
+2026-03-12 15:03:10  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 15:03:10  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 15:03:10  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_FIREFOX_STEP_20260312_150310.png
+2026-03-12 15:03:10  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 15:03:11  [    INFO]    iframe src = https://legacy.rahulshettyacademy.com/
+2026-03-12 15:03:11  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 15:03:12  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 15:03:14  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_FIREFOX_STEP_20260312_150314.png
+2026-03-12 15:03:14  [    INFO]  ── STEP 5 : Click 'View All Courses' and navigate to courses page ──
+2026-03-12 15:03:14  [    INFO]    'View All Courses' href = ''
+2026-03-12 15:03:14  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 15:03:17  [    INFO]    iframe src after click = 'https://legacy.rahulshettyacademy.com/'
+2026-03-12 15:03:17  [    INFO]    Navigating main window to: https://legacy.rahulshettyacademy.com/
+2026-03-12 15:03:20  [    INFO]    ✓ Landed on: https://legacy.rahulshettyacademy.com/
+2026-03-12 15:03:21  [    INFO]    📸  [STEP] → screenshots\04_courses_page_loaded_FIREFOX_STEP_20260312_150320.png
+2026-03-12 15:03:21  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names field ──
+2026-03-12 15:03:52  [    INFO]    Quitting FIREFOX WebDriver …
+2026-03-12 15:11:46  [    INFO]  =================================================================
+2026-03-12 15:11:46  [    INFO]    BROWSER : CHROME
+2026-03-12 15:11:46  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 15:11:46  [    INFO]  =================================================================
+2026-03-12 15:11:56  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 15:11:56  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 15:12:02  [    INFO]    ✓ Title : Practice Page
+2026-03-12 15:12:02  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 15:12:02  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_151202.png
+2026-03-12 15:12:02  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 15:12:03  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 15:12:03  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_151203.png
+2026-03-12 15:12:03  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 15:12:03  [    INFO]    iframe src = https://legacy.rahulshettyacademy.com/
+2026-03-12 15:12:03  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 15:12:05  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 15:12:07  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_151207.png
+2026-03-12 15:12:07  [    INFO]  ── STEP 5 : Click 'View All Courses' inside iframe ──
+2026-03-12 15:12:08  [    INFO]    ✓ Clicked 'View All Courses' (inside iframe)
+2026-03-12 15:12:09  [    INFO]    Navigating main window → https://legacy.rahulshettyacademy.com/
+2026-03-12 15:12:12  [    INFO]    ✓ Landed on legacy site: https://legacy.rahulshettyacademy.com/
+2026-03-12 15:12:12  [    INFO]    📸  [STEP] → screenshots\04_legacy_homepage_CHROME_STEP_20260312_151212.png
+2026-03-12 15:12:12  [    INFO]    Clicking 'View All Courses' on legacy top-level page …
+2026-03-12 15:12:14  [    INFO]    ✓ Clicked 'View All Courses' on legacy page
+2026-03-12 15:12:17  [    INFO]    ✓ Now on: https://legacy.rahulshettyacademy.com/
+2026-03-12 15:12:17  [    INFO]    📸  [STEP] → screenshots\05_courses_listing_page_CHROME_STEP_20260312_151217.png
+2026-03-12 15:12:17  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names field ──
+2026-03-12 15:12:49  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 15:12:53  [    INFO]  =================================================================
+2026-03-12 15:12:53  [    INFO]    BROWSER : FIREFOX
+2026-03-12 15:12:53  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 15:12:53  [    INFO]  =================================================================
+2026-03-12 15:13:11  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 15:13:12  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 15:14:12  [    INFO]    Quitting FIREFOX WebDriver …
+2026-03-12 15:27:37  [    INFO]  =================================================================
+2026-03-12 15:27:37  [    INFO]    BROWSER : CHROME
+2026-03-12 15:27:37  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 15:27:37  [    INFO]  =================================================================
+2026-03-12 15:27:42  [    INFO]  ✓  Chrome WebDriver ready (web-security disabled)
+2026-03-12 15:27:42  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 15:27:56  [    INFO]    ✓ Title : Practice Page
+2026-03-12 15:27:56  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 15:27:57  [    INFO]    📸  [STEP] → screenshots\01_homepage_loaded_CHROME_STEP_20260312_152756.png
+2026-03-12 15:27:57  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 15:27:57  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 15:27:57  [    INFO]    📸  [STEP] → screenshots\02_iframe_section_CHROME_STEP_20260312_152757.png
+2026-03-12 15:27:57  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 15:27:58  [    INFO]    iframe src = https://legacy.rahulshettyacademy.com/
+2026-03-12 15:27:58  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 15:28:00  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 15:28:01  [    INFO]    📸  [STEP] → screenshots\03_iframe_sidebar_scrolled_CHROME_STEP_20260312_152801.png
+2026-03-12 15:28:01  [    INFO]  ── STEP 5 : Click 'View All Courses' (staying inside iframe) ──
+2026-03-12 15:28:02  [    INFO]    ✓ Clicked 'View All Courses'
+2026-03-12 15:28:02  [    INFO]    Waiting for courses listing to render inside iframe …
+2026-03-12 15:28:08  [    INFO]    📸  [STEP] → screenshots\04_after_view_courses_click_CHROME_STEP_20260312_152807.png
+2026-03-12 15:28:08  [    INFO]    [JS DUMP] Found 4 inputs/buttons on current context:
+2026-03-12 15:28:08  [    INFO]      INPUT id=myonoffswitch4 name=onoffswitch4 type=checkbox placeholder=
+2026-03-12 15:28:08  [    INFO]      BUTTON aria-label=null text=
+2026-03-12 15:28:08  [    INFO]      BUTTON aria-label=null text=
+2026-03-12 15:28:08  [    INFO]      BUTTON aria-label=null text=Close
+2026-03-12 15:28:08  [    INFO]  ── STEP 6 : Enter 'Test' in Search Product Names field ──
+2026-03-12 15:28:29  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 15:28:31  [    INFO]  =================================================================
+2026-03-12 15:28:31  [    INFO]    BROWSER : FIREFOX
+2026-03-12 15:28:31  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 15:28:31  [    INFO]  =================================================================
+2026-03-12 15:28:44  [    INFO]  ✓  Firefox WebDriver ready (security prefs relaxed)
+2026-03-12 15:28:44  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 15:29:45  [    INFO]    Quitting FIREFOX WebDriver …

@@ -1,3 +1,10 @@
+# Think and act like you are a senior software tester. Write a script to automate. Additionally, I require an HTML report, cross-browser testing, screenshots, and a test report for all browsers on GitHub, including all logs of this website, using the PyCharm framework with Selenium and Python. Also, generate a .yml file script to push files to GitHub accordingly.
+# 1. Open this website- https://rahulshettyacademy.com/AutomationPractice/
+# 2. Maximise the window
+# 3. Click on the text link "Get Shortlisted...." right side on the top.> a new tab will be opened, after that switch to the main page and continue on the other script.
+# 3. Select dropdown > option2
+
+
 import os
 import time
 import logging

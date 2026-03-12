@@ -1,0 +1,108 @@
+2026-03-12 15:09:21  [    INFO]  =================================================================
+2026-03-12 15:09:21  [    INFO]    BROWSER : CHROME
+2026-03-12 15:09:21  [    INFO]    TEST    : test_full_workflow[chrome]
+2026-03-12 15:09:21  [    INFO]  =================================================================
+2026-03-12 15:09:26  [    INFO]  ✓  Chrome WebDriver ready
+2026-03-12 15:09:26  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 15:09:33  [    INFO]    ✓ Title : Practice Page
+2026-03-12 15:09:33  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 15:09:34  [    INFO]    📸  [STEP] → screenshots/01_homepage_loaded_CHROME_STEP_20260312_150933.png
+2026-03-12 15:09:34  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 15:09:34  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 15:09:35  [    INFO]    📸  [STEP] → screenshots/02_iframe_section_CHROME_STEP_20260312_150934.png
+2026-03-12 15:09:35  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 15:09:35  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 15:09:38  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 15:09:40  [    INFO]    📸  [STEP] → screenshots/03_iframe_sidebar_scrolled_CHROME_STEP_20260312_150939.png
+2026-03-12 15:09:40  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 15:10:07  [    INFO]    📸  [FAIL] → screenshots/FAILURE_CHROME_FAIL_20260312_151007.png
+2026-03-12 15:10:07  [   ERROR]  Test failed due to: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff633acaa55
+	0x7ff633828630
+	0x7ff6335bd75d
+	0x7ff63361862e
+	0x7ff63361893c
+	0x7ff633668d87
+	0x7ff63366591c
+	0x7ff633609098
+	0x7ff633609f83
+	0x7ff633af7810
+	0x7ff633af1afd
+	0x7ff633b12c1a
+	0x7ff633843345
+	0x7ff63384b81c
+	0x7ff633831924
+	0x7ff633831ad6
+	0x7ff633817e47
+	0x7ff9e780e8d7
+	0x7ff9e812c48c
+Traceback (most recent call last):
+  File "C:\Users\Hussain\PycharmProjects\RahulshettydemoSelenium\test_iframe.py", line 230, in test_full_workflow
+    view_btn = wait.until(EC.element_to_be_clickable(L.VIEW_ALL_COURSES))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hussain\PycharmProjects\RahulshettydemoSelenium\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	0x7ff633acaa55
+	0x7ff633828630
+	0x7ff6335bd75d
+	0x7ff63361862e
+	0x7ff63361893c
+	0x7ff633668d87
+	0x7ff63366591c
+	0x7ff633609098
+	0x7ff633609f83
+	0x7ff633af7810
+	0x7ff633af1afd
+	0x7ff633b12c1a
+	0x7ff633843345
+	0x7ff63384b81c
+	0x7ff633831924
+	0x7ff633831ad6
+	0x7ff633817e47
+	0x7ff9e780e8d7
+	0x7ff9e812c48c
+
+2026-03-12 15:10:08  [    INFO]    Quitting CHROME WebDriver …
+2026-03-12 15:10:12  [    INFO]  =================================================================
+2026-03-12 15:10:12  [    INFO]    BROWSER : FIREFOX
+2026-03-12 15:10:12  [    INFO]    TEST    : test_full_workflow[firefox]
+2026-03-12 15:10:12  [    INFO]  =================================================================
+2026-03-12 15:10:22  [    INFO]  ✓  Firefox WebDriver ready
+2026-03-12 15:10:22  [    INFO]  ── STEP 1-2 : Open website and maximise window ──
+2026-03-12 15:10:31  [    INFO]    ✓ Title : Practice Page
+2026-03-12 15:10:31  [    INFO]    ✓ URL   : https://rahulshettyacademy.com/AutomationPractice/
+2026-03-12 15:10:31  [    INFO]    📸  [STEP] → screenshots/01_homepage_loaded_FIREFOX_STEP_20260312_151031.png
+2026-03-12 15:10:31  [    INFO]  ── STEP 3 : Scroll to iFrame Example section ──
+2026-03-12 15:10:32  [    INFO]    ✓ Scrolled to iFrame Example heading
+2026-03-12 15:10:32  [    INFO]    📸  [STEP] → screenshots/02_iframe_section_FIREFOX_STEP_20260312_151032.png
+2026-03-12 15:10:32  [    INFO]  ── STEP 4 : Switch into iframe and scroll sidebar ──
+2026-03-12 15:10:32  [    INFO]    ✓ Switched into iframe#courses-iframe
+2026-03-12 15:10:35  [    INFO]    ✓ Sidebar scrolled inside iframe
+2026-03-12 15:10:37  [    INFO]    📸  [STEP] → screenshots/03_iframe_sidebar_scrolled_FIREFOX_STEP_20260312_151037.png
+2026-03-12 15:10:37  [    INFO]  ── STEP 5 : Click 'View All Courses' button ──
+2026-03-12 15:11:04  [    INFO]    📸  [FAIL] → screenshots/FAILURE_FIREFOX_FAIL_20260312_151104.png
+2026-03-12 15:11:04  [   ERROR]  Test failed due to: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:555:5
+dom.find/</<@chrome://remote/content/shared/DOM.sys.mjs:136:16
+Traceback (most recent call last):
+  File "C:\Users\Hussain\PycharmProjects\RahulshettydemoSelenium\test_iframe.py", line 230, in test_full_workflow
+    view_btn = wait.until(EC.element_to_be_clickable(L.VIEW_ALL_COURSES))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hussain\PycharmProjects\RahulshettydemoSelenium\.venv\Lib\site-packages\selenium\webdriver\support\wait.py", line 121, in until
+    raise TimeoutException(message, screen, stacktrace)
+selenium.common.exceptions.TimeoutException: Message: 
+Stacktrace:
+RemoteError@chrome://remote/content/shared/RemoteError.sys.mjs:8:8
+WebDriverError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:202:5
+NoSuchElementError@chrome://remote/content/shared/webdriver/Errors.sys.mjs:555:5
+dom.find/</<@chrome://remote/content/shared/DOM.sys.mjs:136:16
+
+2026-03-12 15:11:04  [    INFO]    Quitting FIREFOX WebDriver …
